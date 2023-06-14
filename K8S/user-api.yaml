@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  user-api
+  name:  app
   namespace: default
   labels:
     name: callbook
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-api
-        name: user-api
+        name: app
         resources:
           requests:
             cpu: "25m"

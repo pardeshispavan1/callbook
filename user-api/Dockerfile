@@ -1,10 +1,9 @@
 FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY --chown=node:node . .
 USER node
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-ENV PATH=$PATH:/home/node/.npm-global/bin
-WORKDIR /home/node
-COPY . .
 RUN npm install 
 EXPOSE 1004
 ENV MONGO_URL=""

@@ -9,4 +9,3 @@ spec:
   ports:
   - name: user-api-request
     port: 1004
-    targetPort: 1004

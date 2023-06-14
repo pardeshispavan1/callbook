@@ -2,6 +2,7 @@ FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
 RUN useradd userapi
 WORKDIR /app
+RUN chown -R userapi:userapi /app
 RUN chmod -R 777 /app
 COPY . .
 RUN npm install 

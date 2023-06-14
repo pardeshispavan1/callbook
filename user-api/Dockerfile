@@ -2,6 +2,7 @@ FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
 RUN useradd userapi
 WORKDIR /app
+RUN chmod 777 /app
 COPY . .
 RUN npm install 
 EXPOSE 1004

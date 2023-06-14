@@ -1,0 +1,7 @@
+docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret -e MONGO_INITDB_ROOT_DB=mu_db mongo
+
+docker run -d -p 1004:1004 -e MONGO_URL="mongodb://mongoadmin:secret@34.125.149.95:27017/?retryWrites=true&w=majority" -e ADMIN_EMAIL="pardeshispavan3@gmail.com" user-api
+
+docker run -d -p 1005:1004 -e MONGO_URL="mongodb://mongoadmin:secret@34.125.149.95:27017/?retryWrites=true&w=majority" admin-api
+docker run -d -p 3000:3000 user-ui
+docker run -d -p 3001:3000 admin-ui

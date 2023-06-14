@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  user-api
+  namespace: default
+  labels:
+    name: callbook
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: callbook
+  template:
+    metadata:
+      labels:
+        name: callbook
+    spec:
+      containers:
+      - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-api
+        name: user-api
+        resources:
+          requests:
+            cpu: "25m"
+            memory: "125M"
+          limits: 
+            cpu: "50m"
+            memory: "250M"  
+        env:
+        - name: MONGO_URL
+          value: mongodb://mongoadmin:secret@mongo-db-service:27017/?retryWrites=true&w=majority
+        - name: ADMIN_EMAIL
+          value: pardeshispavan3@gmail.com
+        ports:
+        - containerPort: 1004
+          hostPort: 1004

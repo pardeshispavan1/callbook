@@ -3,6 +3,7 @@ LABEL maintainer="Pavan"
 RUN useradd userapi
 WORKDIR /app
 RUN chown -R userapi:userapi /app
+RUN chown -R userapi:userapi /home/node
 RUN chmod -R 777 /app
 RUN chmod -R 777 /home/node
 COPY . .

@@ -32,4 +32,3 @@ spec:
           value: pardeshispavan3@gmail.com
         ports:
         - containerPort: 1004
-          hostPort: 1004

@@ -3,12 +3,12 @@ LABEL name=Callbook
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 COPY --chown=node:node . ./home/node/app/
-USER node
 COPY ./package.json .
 RUN npm install
 EXPOSE 1004
 ENV MONGO_URL=""
 ENV ADMIN_EMAIL=""
+USER node
 CMD ["npm","start"]
 
 # FROM node:6.10.3

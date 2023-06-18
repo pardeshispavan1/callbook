@@ -17,6 +17,9 @@ spec:
     spec:
       containers:
       - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-api
+        imagePullPolicy: IfNotPresent
+        command: [ "/bin/bash", "-c", "--" ] 👈
+        args: [ "while true; do sleep 30; done;" ]
         name: app
         resources:
           requests:

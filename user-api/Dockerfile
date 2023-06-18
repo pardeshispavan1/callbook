@@ -1,12 +1,13 @@
-FROM node:14.16.0-alpine3.13
+FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
-RUN addgroup app && useradd -S -G app app
-RUN mkdir -p /app && chown -R app:app /app
-USER app
-WORKDIR /app
-COPY --chown=app:app . .
-RUN npm install
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY --chown=node:node . .
+USER node
+RUN npm install 
 EXPOSE 1004
 ENV MONGO_URL=""
 ENV ADMIN_EMAIL=""
-CMD ["npm", "start"]
+CMD ["npm","start"]
+
+

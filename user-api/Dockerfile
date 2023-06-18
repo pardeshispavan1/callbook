@@ -1,4 +1,4 @@
-FROM node:17.9.0-slim
+FROM node:6.10.3
 LABEL maintainer="Pavan"
 LABEL name=Callbook
 RUN deluser --remove-home node \

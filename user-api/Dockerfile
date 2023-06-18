@@ -1,5 +1,6 @@
 FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
+LABEL name=Callbook
 RUN mkdir -p /home/user-api/app
 # WORKDIR /home/user-api/app
 # COPY . .

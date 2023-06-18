@@ -3,9 +3,9 @@ LABEL maintainer="Pavan"
 RUN mkdir -p /home/user-api/app
 WORKDIR /home/user-api/app
 COPY . .
-RUN chown -R node:node /home/user-api/app
+RUN chown -R node:node /home/user-api/
 RUN adduser user-api
-RUN chown -R 1001:1001 /home/user-api/.npm
+# RUN chown -R 1001:1001 /home/user-api/.npm
 USER user-api
 RUN npm install 
 EXPOSE 1004

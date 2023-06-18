@@ -2,11 +2,11 @@ FROM node:16.17.0-bullseye-slim
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 COPY --chown=node:node . ./home/node/app/
+USER node
 RUN npm install
 EXPOSE 1004
 ENV MONGO_URL=""
 ENV ADMIN_EMAIL=""
-USER node
 CMD ["npm","start"]
 
 # FROM node:6.10.3

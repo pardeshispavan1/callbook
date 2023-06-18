@@ -6,6 +6,7 @@ COPY . .
 RUN chown -R node:node /home/user-api/app
 RUN adduser user-api
 USER user-api
+RUN chown -R 1001:1001 /home/user-api/.npm
 RUN npm install 
 EXPOSE 1004
 ENV MONGO_URL=""

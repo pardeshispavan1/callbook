@@ -7,6 +7,6 @@ spec:
   selector:
     name: callbook
   ports:
-    - name: user-api-service-port
-    - targetPort: 1004
-      port: 1000
+  - name: user-api-request
+    port: 1004
+    targetPort: 1004

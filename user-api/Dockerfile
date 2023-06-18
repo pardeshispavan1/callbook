@@ -2,8 +2,8 @@ FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
 LABEL name=Callbook
 RUN deluser --remove-home node \
-  && addgroup -S node -g 999 \
-  && adduser -S -G node -u 999 node
+  && addgroup -S user-api -g 999 \
+  && adduser -S -G user-api -u 999 user-api
 RUN mkdir -p /home/user-api/app
 # WORKDIR /home/user-api/app
 # COPY . .

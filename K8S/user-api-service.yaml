@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: user-api-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     name: callbook
   ports:
-  - name: user-api-request
-    port: 5000
-    targetPort: 1004
-    nodePort: 30100
+    - name: user-api-service-port
+    - targetPort: 1004
+      port: 1004

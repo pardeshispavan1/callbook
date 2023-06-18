@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  app
+  name:  user-api
   namespace: default
   labels:
     name: callbook
@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: IfNotPresent
         command: [ "/bin/bash", "-c", "--" ] 👈
         args: [ "while true; do sleep 30; done;" ]
-        name: app
+        name: user-api
         resources:
           requests:
             cpu: "25m"

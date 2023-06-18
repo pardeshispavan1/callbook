@@ -1,7 +1,7 @@
 FROM node:6.10.3
 LABEL maintainer="Pavan"
 LABEL name=Callbook
-RUN groupadd --gid 1000 user-api && useradd --uid 1000 --gid user-api --shell /bin/bash --create-home user-api
+RUN groupadd --gid 1000 user-api && useradd --uid 1000 --gid user-api --create-home user-api
 # WORKDIR /home/user-api/app
 # COPY . .
 # RUN chown -R node:node /home/user-api/

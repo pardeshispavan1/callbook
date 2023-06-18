@@ -1,6 +1,6 @@
 FROM node:14.16.0-alpine3.13
 LABEL maintainer="Pavan"
-RUN groupadd app && useradd -S -G app app
+RUN addgroup app && useradd -S -G app app
 RUN mkdir -p /app && chown -R app:app /app
 USER app
 WORKDIR /app

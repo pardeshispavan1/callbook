@@ -1,4 +1,4 @@
-FROM node:16.17.0-bullseye-slim
+FROM node:8.7-alpine
 LABEL name=Callbook
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app

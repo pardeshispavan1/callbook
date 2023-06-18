@@ -1,9 +1,7 @@
 FROM node:6.10.3
 LABEL maintainer="Pavan"
 LABEL name=Callbook
-RUN deluser --remove-home node \
-  && addgroup -S node -g 999 \
-  && adduser -S -G node -u 999 node
+RUN groupadd --gid 1000 user-api && useradd --uid 1000 --gid user-api --shell /bin/bash --create-home user-api
 # WORKDIR /home/user-api/app
 # COPY . .
 # RUN chown -R node:node /home/user-api/

@@ -2,9 +2,7 @@ FROM node:8.7-alpine
 LABEL name=Callbook
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
-COPY --chown=node:node . ./home/node/app/
-COPY ./package.json .
-COPY ./server.js .
+COPY . ./home/node/app/
 RUN npm install
 EXPOSE 1004
 ENV MONGO_URL=""

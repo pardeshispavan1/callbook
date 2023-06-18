@@ -1,8 +1,10 @@
 FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
-RUN mkdir -p /home/user-api/app && chown -R node:node /home/user-api/app
+RUN mkdir -p /home/user-api/app
 WORKDIR /home/user-api/app
-COPY --chown=user-api:user-api . .
+COPY . .
+RUN chown -R node:node /home/user-api/app
+RUN adduser user-api
 USER user-api
 RUN npm install 
 EXPOSE 1004

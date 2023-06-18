@@ -1,7 +1,13 @@
-FROM node:16.13.1-alpine3.15
-RUN npm i -g npm@8.6.0
-RUN addgroup allusers && adduser -S -G allusers user-api
-RUN mkdir /home/user-api/.npm && chown -R 1001:1001 /home/user-api/
+FROM node:10-alpine
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+USER node
+RUN npm install
+COPY --chown=node:node . .
+EXPOSE 1004
+ENV MONGO_URL=""
+ENV ADMIN_EMAIL=""
+CMD ["npm","start"]
 
 # FROM node:6.10.3
 # LABEL maintainer="Pavan"

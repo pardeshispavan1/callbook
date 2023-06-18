@@ -2,7 +2,6 @@ FROM node:6.10.3
 LABEL maintainer="Pavan"
 LABEL name=Callbook
 RUN adduser --home /home/user-api user-api
-RUN addgroup user-api -g 999
 RUN mkdir -p /home/user-api/app
 USER user-api
 # WORKDIR /home/user-api/app

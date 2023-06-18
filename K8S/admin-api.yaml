@@ -27,6 +27,6 @@ spec:
             memory: "250M"  
         env:
         - name: MONGO_URL
-          value: mongodb://mongoadmin:secret@10.40.12.91:27017/?retryWrites=true&w=majority
+          value: mongodb://mongoadmin:secret@10.40.13.75:27017/?retryWrites=true&w=majority
         ports:
         - containerPort: 1004

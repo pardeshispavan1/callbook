@@ -9,4 +9,4 @@ spec:
   ports:
     - name: user-api-service-port
     - targetPort: 1004
-      port: 1004
+      port: 1000

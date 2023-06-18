@@ -1,4 +1,5 @@
 FROM node:16.17.0-bullseye-slim
+LABEL name=Callbook
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 COPY --chown=node:node . ./home/node/app/

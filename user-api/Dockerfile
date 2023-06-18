@@ -1,13 +1,15 @@
 FROM node:8
 LABEL name=Callbook
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
-COPY . ./home/node/app/
-RUN npm install
+LABEL maintainer="DeekshithSN"
+RUN useradd userapi
+WORKDIR /app
+COPY . .
+RUN npm install 
 EXPOSE 1004
+USER userapi
 ENV MONGO_URL=""
 ENV ADMIN_EMAIL=""
-USER node
 CMD ["npm","start"]
 
 # FROM node:6.10.3

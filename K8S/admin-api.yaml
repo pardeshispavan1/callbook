@@ -30,3 +30,4 @@ spec:
           value: mongodb://mongoadmin:secret@mongo-db-service:27017/?retryWrites=true&w=majority
         ports:
         - containerPort: 1004
+          hostPort: 1005

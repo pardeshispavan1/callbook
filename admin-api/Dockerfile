@@ -1,10 +1,10 @@
-FROM node:17.9.0-slim
+FROM node:18-alpine
 LABEL maintainer="Pavan"
-RUN useradd adminapi
+# RUN useradd adminapi
 WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install
 COPY . .
-RUN npm install 
 EXPOSE 1004
-USER adminapi
 ENV MONGO_URL=""
 CMD ["npm","start"]

@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  user-ui
+  name: callbook-user-ui
+
   namespace: default
   labels:
-    name: callbook
+    name: callbook-user-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: callbook
+      name: callbook-user-ui
   template:
     metadata:
       labels:
-        name: callbook
+        name: callbook-user-ui
     spec:
       containers:
       - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui

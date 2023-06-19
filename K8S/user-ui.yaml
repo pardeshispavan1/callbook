@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  user-ui
+  namespace: default
+  labels:
+    name: callbook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: callbook
+  template:
+    metadata:
+      labels:
+        name: callbook
+    spec:
+      containers:
+      - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui
+        imagePullPolicy: IfNotPresent
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
+        name: user-ui
+        resources:
+          requests:
+            cpu: "25m"
+            memory: "125M"
+          limits: 
+            cpu: "50m"
+            memory: "250M"  
+        ports:
+        - containerPort: 3000

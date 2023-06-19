@@ -1,10 +1,8 @@
-FROM node:17.9.0-slim
+FROM node:18-alpine
 LABEL maintainer="Pavan"
-RUN useradd userui
 WORKDIR /app
-RUN chown userui /app
-COPY . .
+COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install 
+COPY . .
 EXPOSE 3000
-USER userui
 CMD ["npm","start"]

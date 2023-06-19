@@ -1,9 +1,8 @@
-FROM node:17.9.0-slim
+FROM node:18-alpine
 LABEL maintainer="Pavan"
-RUN useradd adminui
 WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install
 COPY . .
-RUN npm install 
 EXPOSE 3000
-USER adminui
 CMD ["npm","start"]

@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-ui
-
   namespace: default
   labels:
     name: callbook
@@ -31,6 +30,6 @@ spec:
             memory: "250M"
         env:
           - name: REACT_APP_API_URL
-            value: http://user-api-service:1003      
+            value: http://10.40.15.93:1003      
         ports:
         - containerPort: 3000

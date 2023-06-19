@@ -5,7 +5,7 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
 COPY . .
-RUN useradd userapi
+# RUN useradd userapi
 EXPOSE 1004
 # USER userapi
 ENV MONGO_URL=""

@@ -8,5 +8,5 @@ spec:
     name: callbook
   ports:
   - name: admin-api-request
-    port: 1005
-    targetPort: 1004
+    port: 1002
+    targetPort: 1005

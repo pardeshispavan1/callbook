@@ -9,4 +9,4 @@ spec:
   ports:
   - name: admin-api-request
     port: 1002
-    targetPort: 1004
+    targetPort: 1005

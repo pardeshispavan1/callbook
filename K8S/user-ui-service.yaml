@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: user-ui-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     name: callbook
   ports:

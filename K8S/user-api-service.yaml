@@ -8,5 +8,5 @@ spec:
     name: callbook
   ports:
   - name: user-api-request
-    port: 1004
+    port: 1003
     targetPort: 1004

@@ -28,6 +28,9 @@ spec:
             memory: "125M"
           limits: 
             cpu: "50m"
-            memory: "250M"  
+            memory: "250M"
+        env:
+          - name: REACT_APP_API_URL
+            value: http://user-api-service:1003      
         ports:
         - containerPort: 3000

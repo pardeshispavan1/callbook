@@ -30,3 +30,13 @@ spec:
           value: mongodb://mongoadmin:secret@mongo-db-service:27017/?retryWrites=true&w=majority
         ports:
         - containerPort: 1004
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: name
+                  operator: In
+                  values:
+                    - callbook
+            topologyKey: "kubernetes.io/hostname"

@@ -10,4 +10,4 @@ spec:
   - name: admin-api-request
     port: 1002
     targetPort: 1004
-    nodePort: 1006
+    nodePort: 30050

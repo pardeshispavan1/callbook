@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: admin-api-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     name: callbook
   ports:
   - name: admin-api-request
     port: 1002
     targetPort: 1004
+    nodePort: 1006

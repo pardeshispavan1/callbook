@@ -1,13 +1,13 @@
-FROM node:17.9
+FROM node:18-alpine
 LABEL name=Callbook
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-LABEL maintainer="DeekshithSN"
-RUN useradd userapi
+LABEL maintainer="Pavan"
 WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install
 COPY . .
-RUN npm install 
+RUN useradd userapi
 EXPOSE 1004
-USER userapi
+# USER userapi
 ENV MONGO_URL=""
 ENV ADMIN_EMAIL=""
 CMD ["npm","start"]

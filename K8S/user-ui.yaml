@@ -28,8 +28,8 @@ spec:
           limits: 
             cpu: "50m"
             memory: "250M"
-        # env:
-        #   - name: REACT_APP_API_URL
-        #     value: http://10.40.15.93:1003
+        env:
+          - name: REACT_APP_API_URL
+            value: http://10.40.15.93:1003
         ports:
         - containerPort: 3000

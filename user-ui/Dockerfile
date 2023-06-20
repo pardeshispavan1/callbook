@@ -1,6 +1,6 @@
 FROM node:17.9
 LABEL maintainer="Pavan"
-RUN useradd userui
+# RUN useradd userui
 WORKDIR /app
 # RUN chown userui /app
 COPY . .

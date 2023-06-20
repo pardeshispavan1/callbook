@@ -2,12 +2,12 @@ FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
 RUN useradd userui
 WORKDIR /app
-RUN chown userui /app
+# RUN chown userui /app
 COPY . .
 # ENV REACT_APP_API_URL=""
 RUN npm install 
 EXPOSE 3000
-USER userui
+# USER userui
 CMD ["npm","start"]
 
 # FROM node:18-alpine

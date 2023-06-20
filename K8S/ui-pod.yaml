@@ -8,14 +8,14 @@ metadata:
 spec:
   containers:
   - name: user-ui
-    image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui
+    image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui:1.0
     resources:
       limits:
-        cpu: 200m
-        memory: 500Mi
+        cpu: 400m
+        memory: 800Mi
       requests:
-        cpu: 100m
-        memory: 200Mi
+        cpu: 200m
+        memory: 400Mi
     ports:
     - name: user-ui-port
       containerPort: 3000

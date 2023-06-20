@@ -16,8 +16,8 @@ spec:
         name: callbook
     spec:
       containers:
-        - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui:1.0
-        imagePullPolicy: IfNotPresent
+      - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui:1.0
+        #imagePullPolicy: IfNotPresent
         # command: [ "/bin/bash", "-c", "--" ]
         # args: [ "while true; do sleep 30; done;" ]
         name: user-ui
@@ -29,7 +29,7 @@ spec:
             cpu: "50m"
             memory: "250M"
         env:
-          - name: REACT_APP_API_URL
-            value: http://10.40.15.93:1003
+        - name: REACT_APP_API_URL
+          value: http://10.40.15.93:1003
         ports:
         - containerPort: 3000

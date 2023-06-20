@@ -33,4 +33,4 @@ spec:
           value: http://10.40.6.220:1002
         ports:
         - name: user-ui-port
-          containerPort: 3002
+          containerPort: 3000

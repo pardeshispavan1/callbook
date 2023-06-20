@@ -9,4 +9,4 @@ spec:
   ports:
   - name: admin-ui-request
     port: 3003
-    targetPort: 3002
+    targetPort: 3000

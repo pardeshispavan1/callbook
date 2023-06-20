@@ -23,13 +23,14 @@ spec:
         name: user-ui
         resources:
           requests:
-            cpu: "25m"
-            memory: "125M"
+            cpu: "200m"
+            memory: "400Mi"
           limits: 
-            cpu: "50m"
-            memory: "250M"
+            cpu: "400m"
+            memory: "800Mi"
         env:
         - name: REACT_APP_API_URL
           value: http://10.40.15.93:1003
         ports:
-        - containerPort: 3000
+        - name: user-ui-port
+          containerPort: 3000

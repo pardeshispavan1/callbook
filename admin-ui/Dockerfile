@@ -1,11 +1,10 @@
 FROM node:17.9.0-slim
 LABEL maintainer="Pavan"
-RUN useradd userui
+RUN useradd adminui
 WORKDIR /app
-RUN chown userui /app
+RUN chown adminui /app
 COPY . .
 RUN npm install
-ENV REACT_APP_API_URL=""
 EXPOSE 3000
-USER userui
+USER adminui
 CMD ["npm","start"]

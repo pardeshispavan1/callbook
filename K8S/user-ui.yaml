@@ -16,7 +16,7 @@ spec:
         name: callbook
     spec:
       containers:
-      - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui
+        - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui:1.0
         imagePullPolicy: IfNotPresent
         # command: [ "/bin/bash", "-c", "--" ]
         # args: [ "while true; do sleep 30; done;" ]

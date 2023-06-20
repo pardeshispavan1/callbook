@@ -1,4 +1,4 @@
-FROM node:17.9
+FROM node:17.9.1-bullseye
 LABEL maintainer="Pavan"
 # RUN useradd userui
 WORKDIR /app

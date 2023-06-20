@@ -4,7 +4,7 @@ RUN useradd userui
 WORKDIR /app
 RUN chown userui /app
 COPY . .
-ENV REACT_APP_API_URL=""
+# ENV REACT_APP_API_URL=""
 RUN npm install 
 EXPOSE 3000
 USER userui

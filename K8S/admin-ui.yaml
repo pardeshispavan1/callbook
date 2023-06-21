@@ -30,7 +30,7 @@ spec:
             memory: "800Mi"
         env:
         - name: REACT_APP_API_URL
-          value: http://10.40.6.220:1002
+          value: http://admin-api-service:1002
         ports:
         - name: user-ui-port
           containerPort: 3000

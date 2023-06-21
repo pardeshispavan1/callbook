@@ -4,7 +4,7 @@ metadata:
   name: user-ui-service
   namespace: user
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     name: callbook
   ports:

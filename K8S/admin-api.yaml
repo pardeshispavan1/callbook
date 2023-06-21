@@ -27,7 +27,7 @@ spec:
             memory: "250M"  
         env:
         - name: MONGO_URL
-          value: mongodb://mongoadmin:secret@mongo-db-service:27017/?retryWrites=true&w=majority
+          value: mongodb://mongoadmin:secret@mongo-db-service.db.svc.cluster.local:27017/?retryWrites=true&w=majority
         ports:
         - containerPort: 1005
       affinity:

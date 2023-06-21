@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  admin-api
+  namespace: default
+  labels:
+    name: callbook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: callbook
+  template:
+    metadata:
+      labels:
+        name: callbook
+    spec:
+      containers:
+      - image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/admin-api
+        name: admin-api
+        resources:
+          requests:
+            cpu: "25m"
+            memory: "125M"
+          limits: 
+            cpu: "50m"
+            memory: "250M"  
+        env:
+        - name: MONGO_URL
+          value: mongodb://mongoadmin:secret@mongo-db-service:27017/?retryWrites=true&w=majority
+        ports:
+        - containerPort: 1005
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: name
+                  operator: In
+                  values:
+                    - callbook
+            topologyKey: "kubernetes.io/hostname"

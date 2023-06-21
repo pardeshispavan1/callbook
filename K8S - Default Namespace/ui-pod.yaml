@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: user-ui
+  namespace: default
+  labels:
+    name: callbook
+spec:
+  containers:
+  - name: user-ui
+    image: us-east1-docker.pkg.dev/kubernetes-389210/callbooking/user-ui:1.0
+    resources:
+      limits:
+        cpu: 400m
+        memory: 800Mi
+      requests:
+        cpu: 200m
+        memory: 400Mi
+    ports:
+    - name: user-ui-port
+      containerPort: 3000

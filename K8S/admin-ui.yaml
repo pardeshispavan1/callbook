@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: admin-ui
-  namespace: admin
+  namespace: ui
   labels:
     name: callbook
 spec:
@@ -30,7 +30,7 @@ spec:
             memory: "800Mi"
         env:
         - name: REACT_APP_API_URL
-          value: http://admin-api-service:1002
+          value: http://admin-api-service.admin.svc.cluster.local:1002
         ports:
         - name: user-ui-port
           containerPort: 3000

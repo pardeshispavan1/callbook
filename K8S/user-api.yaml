@@ -35,3 +35,21 @@ spec:
           value: pardeshispavan3@gmail.com
         ports:
         - containerPort: 1004
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 1004
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 1  
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 1004
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 1

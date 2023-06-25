@@ -30,6 +30,24 @@ spec:
           value: mongodb://mongoadmin:secret@mongo-db-service.db.svc.cluster.local:27017/?retryWrites=true&w=majority
         ports:
         - containerPort: 1005
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 1005
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 1  
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 1005
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 1
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -40,3 +58,4 @@ spec:
                   values:
                     - callbook
             topologyKey: "kubernetes.io/hostname"
+      

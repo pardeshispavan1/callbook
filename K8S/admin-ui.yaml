@@ -29,26 +29,31 @@ spec:
             cpu: "400m"
             memory: "800Mi"
         env:
+        # - name: REACT_APP_API_URL
+        #   value: http://admin-api-service.admin.svc.cluster.local:1002
         - name: REACT_APP_API_URL
-          value: http://admin-api-service.admin.svc.cluster.local:1002
+          valueFrom:
+            configMapKeyRef:
+              name: myconfigs
+              key: REACT_APP_API_URL
         ports:
         - name: admin-ui-port
           containerPort: 3000
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 3000
-          initialDelaySeconds: 150
-          periodSeconds: 20
-          # successThreshold: 1
-          # failureThreshold: 3
-          # timeoutSeconds: 1  
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 3000
-          initialDelaySeconds: 170
-          periodSeconds: 40
-          # successThreshold: 1
-          # failureThreshold: 3
-          # timeoutSeconds: 1
+        # livenessProbe:
+        #   httpGet:
+        #     path: /health
+        #     port: 3000
+        #   initialDelaySeconds: 150
+        #   periodSeconds: 20
+        #   # successThreshold: 1
+        #   # failureThreshold: 3
+        #   # timeoutSeconds: 1  
+        # readinessProbe:
+        #   httpGet:
+        #     path: /health
+        #     port: 3000
+        #   initialDelaySeconds: 170
+        #   periodSeconds: 40
+        #   # successThreshold: 1
+        #   # failureThreshold: 3
+        #   # timeoutSeconds: 1

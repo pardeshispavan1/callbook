@@ -26,8 +26,18 @@ spec:
             cpu: "50m"
             memory: "250M"  
         env:
+        # - name: MONGO_URL
+        #   value: mongodb://mongoadmin:secret@mongo-db-service.db.svc.cluster.local:27017/?retryWrites=true&w=majority
         - name: MONGO_URL
-          value: mongodb://mongoadmin:secret@mongo-db-service.db.svc.cluster.local:27017/?retryWrites=true&w=majority
+          valueFrom:
+            secretKeyRef:
+              name: mysecrets.db.Secret.cluster.local
+              key: MONGO_URL
+        - name: ADMIN_EMAIL
+          valueFrom:
+            configMapKeyRef:
+              name: myconfigs.default.ConfigMap.cluster.local
+              key: ADMIN_EMAIL
         ports:
         - containerPort: 1005
         livenessProbe:

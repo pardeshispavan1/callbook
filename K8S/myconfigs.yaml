@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigs
+  labels:
+    app: callbook
+data:
+  ADMIN_EMAIL: pardeshispavan1@gmail.com
+  REACT_APP_API_URL: http://admin-api-service.admin.svc.cluster.local:1002

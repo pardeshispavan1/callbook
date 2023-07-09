@@ -31,12 +31,12 @@ spec:
         - name: MONGO_URL
           valueFrom:
             secretKeyRef:
-              name: mysecrets.db.Secret.cluster.local
+              name: mysecrets.db.secret.cluster.local
               key: MONGO_URL
         - name: ADMIN_EMAIL
           valueFrom:
             configMapKeyRef:
-              name: myconfigs.default.ConfigMap.cluster.local
+              name: myconfigs
               key: ADMIN_EMAIL
         ports:
         - containerPort: 1005

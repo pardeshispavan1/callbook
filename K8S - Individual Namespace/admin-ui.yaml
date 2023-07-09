@@ -29,13 +29,13 @@ spec:
             cpu: "400m"
             memory: "800Mi"
         env:
-        # - name: REACT_APP_API_URL
-        #   value: http://admin-api-service.admin.svc.cluster.local:1002
         - name: REACT_APP_API_URL
-          valueFrom:
-            configMapKeyRef:
-              name: myconfigs
-              key: REACT_APP_API_URL
+          value: http://admin-api-service.admin.svc.cluster.local:1002
+        # - name: REACT_APP_API_URL
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: myconfigs
+        #       key: REACT_APP_API_URL
         ports:
         - name: admin-ui-port
           containerPort: 3000

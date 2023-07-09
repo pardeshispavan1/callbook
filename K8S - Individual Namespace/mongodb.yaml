@@ -26,26 +26,26 @@ spec:
             cpu: "50m"
             memory: "250M"  
         env:
-        # - name: MONGO_INITDB_ROOT_USERNAME
-        #   value: mongoadmin
-        # - name: MONGO_INITDB_ROOT_PASSWORD
-        #   value: secret
-        # - name: MONGO_INITDB_ROOT_DB
-        #   value: my_db
         - name: MONGO_INITDB_ROOT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mysecrets
-              key: MONGO_INITDB_ROOT_USERNAME
+          value: mongoadmin
         - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysecrets
-              key: MONGO_INITDB_ROOT_PASSWORD
-        - name: MONGO_INITDB_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: mysecrets
-              key: MONGO_INITDB_DATABASE   
+          value: secret
+        - name: MONGO_INITDB_ROOT_DB
+          value: my_db
+        # - name: MONGO_INITDB_ROOT_USERNAME
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mysecrets
+        #       key: MONGO_INITDB_ROOT_USERNAME
+        # - name: MONGO_INITDB_ROOT_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mysecrets
+        #       key: MONGO_INITDB_ROOT_PASSWORD
+        # - name: MONGO_INITDB_DATABASE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mysecrets
+        #       key: MONGO_INITDB_DATABASE   
         ports:
         - containerPort: 27017
